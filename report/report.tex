@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[numbers]{natbib}
+\usepackage{listings}
+\lstset{language=C++}
+\pagestyle{myheadings}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+        \LARGE
+        CSC2515-Introduction to Machine Learning
+        
+        \vspace{0.5cm}
+        \Huge
+        \textbf{Digit Recognition in Street View House Numbers}
+        
+        {\Large        
+        \vspace{1.0cm}
+        \textbf{Bai, Min}--mbai@cs.toronto.edu\\
+        \textbf{Loyzer, Mark}--loyzer@cs.toronto.edu}
+        
+        
+        \vfill
+        
+        \vspace{0.5cm}
+        
+        \includegraphics[width=0.4\textwidth]{uoft}
+        
+        \Large
+        Department of Computer Science\\
+        University of Toronto\\
+        Toronto, Ontario, Canada\\
+        December 15, 2015
+        
+    \end{center}
+\end{titlepage}
+
+
+\textbf{Abstract}\\
+
+
+\title{Sections and Chapters}
+\author{Min Bai, Mark Loyzer}
+\date{December 15, 2015}
+\maketitle
+\tableofcontents
+
+
+\clearpage
+
+\section{Abbreviations, Symbols, Nomenclature}
+\begin{enumerate}
+	\item[] ???
+\end{enumerate}
+
+
+\section{Introduction}
+This project focuses on classifying digits from street view images. Towards this goal, download the Format 2 images from the Street View House numbers dataset [1] with train 32x32.mat, test 32x32.mat data, which you can find at http://ufldl.stanford.edu/housenumbers/. In this task, all the images have a fixed 32 × 32 resolution with character-level ground truth labels. For each example, the labeled character is centered at the image. There are ten classes in total 1 for each digit. Divide the training into train and validation (e.g., 80\% and 20\%).
+
+Note that the data is collected from street-view images, thus there exist vast intra-class variations. To generate competitive performance, you may want to consider exploiting good feature representations that are robust to those variations, whether they should be hand-crafted features or learned features. In order to boost performance, you may also want to consider augmenting the training data with extra 32x32.mat. The purpose of this project is to investigate machine learning techniques to solve this task. Try things that we have seen in class, or other techniques if you feel like it. Write in your report what you have done, what you observe, what you have tried, why you did what you did, etc.
+
+\section{Techniques}
+
+\subsection{Convolutional Neural Networks}
+
+
+\section{Conclusion}
+
+
+\section{References}
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{research}
+\end{document}
