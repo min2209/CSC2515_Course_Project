@@ -5,7 +5,7 @@ from __future__ import print_function
 import gzip
 import os
 import numpy
-from load_mat import load_mat
+from .load_mat import load_mat
 from six.moves import urllib
 from six.moves import xrange  # pylint: disable=redefined-builtin
 SOURCE_URL = 'http://yann.lecun.com/exdb/mnist/'
@@ -72,7 +72,7 @@ class DataSet(object):
 def read_data_sets(path_to_mat, div_fractions):
   class DataSets(object):
     pass
-  assert sum(div_fractions) == 1
+  assert sum(div_fractions) <= 1  # Allow using a fraction of data set
   data_sets = DataSets()
 
   # load all input values. roll image index to position 0 in ndarray
@@ -82,10 +82,11 @@ def read_data_sets(path_to_mat, div_fractions):
   # load all target values. change target values to onehot
   target_all = dense_to_one_hot(input_dict["y"])
 
-  train_end_index = div_fractions[0]*input_all.shape[0]
-  valid_end_index = (div_fractions[0] + div_fractions[1])*input_all.shape[0]
+  train_end_index = int(div_fractions[0]*input_all.shape[0])
+  valid_end_index = int((div_fractions[0] + div_fractions[1])*input_all.shape[0])
+  test_end_index = int(sum(div_fractions) * input_all.shape[0])
 
   data_sets.train = DataSet(input_all[0:train_end_index], target_all[0:train_end_index])
   data_sets.validation = DataSet(input_all[train_end_index:valid_end_index], target_all[train_end_index:valid_end_index])
-  data_sets.test = DataSet(input_all[valid_end_index:], target_all[valid_end_index:])
+  data_sets.test = DataSet(input_all[valid_end_index:test_end_index], target_all[valid_end_index:test_end_index])
   return data_sets
