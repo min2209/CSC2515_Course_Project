@@ -1,10 +1,11 @@
 import numpy as np
+from config import DATA_PATH
 from scipy.stats import mode
 import tensorflow as tf
 import lib.gen_input as gen_input
 import matplotlib.pyplot as plt
 from math import ceil
-import cv2
+#import cv2
 
 # COLOURS = ['b-', 'r-', 'g-', 'k-', 'y-', 'c-', 'm-']
 def plot(xs, ys, x_title='', y_title='', title='', label_prefix='', labels=''):
@@ -61,7 +62,7 @@ def color_channel_as_example(x_img, y_img):
 Ks = [1,3, 5, 7, 9, 11, 13, 15, 17]
 Ks = [1, 3]
 div_fractions = [0.80, 0.0, 0.20]  # Fractions to divide data into the train, valid, and test sets
-inputs = gen_input.read_data_sets("/media/min/Data/SVHN/Format2/train_32x32.mat", div_fractions)
+inputs = gen_input.read_data_sets(DATA_PATH + "train_32x32.mat", div_fractions)
 
 print "Loaded data!"
 
@@ -96,8 +97,6 @@ neg_distance = tf.neg(distance)     # MIN(distance) = MAX(neg_distance)
 # Predict: Get index of the most frequent class (Nearest Neighbor)
 #prediction = tf.argmin(distance, 0)
 
-num_correct = 0
-
 print "Init Session..."
 # Get session ready
 init = tf.initialize_all_variables()
@@ -105,9 +104,10 @@ session = tf.Session()
 session.run(init)
 
 print "Starting training/testing ", len(Xte), " examples"
-accuracies = []
 for K in Ks:
     print "Starting K = ", K
+    num_correct = 0
+    accuracies = []
     # loop over test data
     for i in range(len(Xte)):
         # Get nearest neighbor
@@ -118,7 +118,7 @@ for K in Ks:
         top_class_index, count = mode(top_classes_index)
         top_class_index = top_class_index[0]    # Unbox from array
 
-        if (i % 100 == 0):
+        if (i % 10 == 0):
             print "Test", (i + 1), "Prediction:", np.argmax(Ytr[top_class_index]), "True Class:", np.argmax(Yte[i])
 
         # Get nearest neighbor class label and compare it to its true label
