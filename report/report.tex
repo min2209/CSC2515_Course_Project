@@ -8,7 +8,7 @@
 \pagestyle{myheadings}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
-
+\newcommand{\duedate}{December 21, 2015}
 
 \begin{document}
 \begin{titlepage}
@@ -38,7 +38,7 @@
         Department of Computer Science\\
         University of Toronto\\
         Toronto, Ontario, Canada\\
-        December 15, 2015
+        \duedate
         
     \end{center}
 \end{titlepage}
@@ -49,7 +49,7 @@
 
 \title{Sections and Chapters}
 \author{Min Bai, Mark Loyzer}
-\date{December 15, 2015}
+\date{\duedate}
 \maketitle
 \tableofcontents
 
@@ -70,6 +70,38 @@ Note that the data is collected from street-view images, thus there exist vast i
 \section{Techniques}
 
 \subsection{Convolutional Neural Networks}
+
+\subsection{K-Nearest Neighbours}
+K-Nearest Neighbours (K-NN) has traditionally performed very well in a variety of tasks so we will use K-NN with a variety of preprocessing techniques. These techniques include:
+
+\begin{itemize}
+	\item Each RGB colour channel as added features. Considering how K-NN prevails in situations where the dataset has a smooth distribution (ie. the number of dimensions can't be too large unless you have a plethora of data), we expect this to produce poor results.
+	\item Each RGB colour channel as an additional example. The idea behind this technique is to expect that colours do not matter, but intensities do. Additionally we can gain three times the number of examples.
+	\item Converting examples to grayscale. Similarly, if the colours do not influence the class then converting to grayscale should be an efficient way to reduce the dimensionality.
+	\item Normalizing grayscale examples assuming again that intensities contain information.
+	\item Normalizing grayscale examples with a threshold so that all pixels below the threshold will be 0.
+	\item Extracting hard coded feature detectors ()
+\end{itemize}
+All techniques will be evaluated for $K \in \{1, 3, 5, 7, 9, 11, 13, 15, 17, 19\}$.
+
+\subsubsection{RGB Channels as Features}
+Figure~\ref{fig:knn_rgb_features} shows the accuracy of using KNN to classify SVHN. The accuracies range from __\% to __\%; however, all are very low due to not having a smooth distribution as each example will have $32 x 32 x 3 = 3072$ dimensions.
+\begin{figure}
+	\includegraphics[width=\textwidth]{./plots/knn_rgb_features}
+    	\caption{Performance of K-NN using images' RGB channels as features}
+	\label{fig:knn_rgb_features}
+\end{figure}
+
+\subsubsection{RGB Channels as Added Examples}
+Figure~\ref{fig:knn_rgb_examples} shows the accuracy of using KNN to classify SVHN
+\begin{figure}
+	\includegraphics[width=\textwidth]{./plots/knn_rgb_examples}
+    	\caption{Performance of K-NN using images' RGB channels as added examples}
+	\label{fig:knn_rgb_examples}
+\end{figure}
+
+
+\subsubsection{Concluding Remarks}
 
 
 \section{Conclusion}
