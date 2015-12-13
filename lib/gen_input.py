@@ -33,8 +33,8 @@ class DataSet(object):
     # Convert from [0, 255] -> [0.0, 1.0].
     images = images.astype(numpy.float32)
     images = numpy.multiply(images, 1.0 / 255.0)
-    self._images = images
-    self._labels = labels
+    self._images = numpy.array(images)
+    self._labels = numpy.array(labels)
     self._epochs_completed = 0
     self._index_in_epoch = 0
   @property
