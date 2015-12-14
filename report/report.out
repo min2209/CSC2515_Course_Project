@@ -1,0 +1,9 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Techniques}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Convolutional Neural Networks}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{K-Nearest Neighbours}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Determining PCA Dimension}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Determining K}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Grayscale PCA Pixel Values}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Concluding Remarks}{subsection.2.2}% 8
+\BOOKMARK [1][-]{section.3}{Conclusion}{}% 9
