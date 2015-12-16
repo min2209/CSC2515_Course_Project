@@ -1,4 +1,4 @@
-from config import DATA_PATH
+from config import DATA_PATH, IMAGE_DIMENSION
 import lib.gen_input as gen_input
 from image_processing import rgb_to_grayscale
 import numpy as np
@@ -80,20 +80,20 @@ Ks = [7]
 REDUCED_DIMENSIONS = [3]
 def main():
     # div_fractions = [0.80, 0.0, 0.20]  # Fractions to divide data into the train, valid, and test sets
-    train = gen_input.read_data_sets(DATA_PATH + "train_32x32.mat", [1, 0, 0])
-    test = gen_input.read_data_sets(DATA_PATH + "test_32x32.mat", [0, 0, 1])
+    train = gen_input.read_data_sets(DATA_PATH + "train_32x32.mat", [0.1, 0, 0])
+    test = gen_input.read_data_sets(DATA_PATH + "test_32x32.mat", [0, 0, 0.1])
     #extra_train = load_extras(range(1,6))
-    Xtr = train.train.images
+    Xtr = train.train.images.reshape(-1, IMAGE_DIMENSION, IMAGE_DIMENSION, 3)
     Ytr = train.train.labels
-    #Xtr = np.concatenate((train.train.images, extra_train.train.images), axis=0)
-    #Ytr = np.concatenate((train.train.labels, extra_train.train.labels), axis=0)
-    Xte = test.test.images
+    #Xtr = np.concatenate((Xtr, extra_train.train.images.reshape(IMAGE_DIMENSION,IMAGE_DIMENSION,3)), axis=0)
+    #Ytr = np.concatenate((Ytr, extra_train.train.labels), axis=0)
+    Xte = test.test.images.reshape(-1, IMAGE_DIMENSION, IMAGE_DIMENSION, 3)
     Yte = test.test.labels
     print "Loaded data!"
 
     # Convert to grayscale
-    Xtr = rgb_to_grayscale(Xtr)
-    Xte = rgb_to_grayscale(Xte)
+    Xtr = rgb_to_grayscale(Xtr).reshape(-1, IMAGE_DIMENSION * IMAGE_DIMENSION)
+    Xte = rgb_to_grayscale(Xte).reshape(-1, IMAGE_DIMENSION * IMAGE_DIMENSION)
 
     # Xtr = normalize(Xtr)
     # Xte = normalize(Xte)
@@ -177,7 +177,7 @@ def main():
         print accuracies
         plt.ylim((min_accuracy - 0.1 * min_accuracy, max_accuracy + 0.1 * max_accuracy))
         plt.legend(loc='upper right')
-        plt.ioff();
+        plt.ioff()
         raw_input('Press Enter to exit.')
         plt.savefig('./plots/knn/grayscale1.png', bbox_inches='tight')
 

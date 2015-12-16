@@ -69,7 +69,11 @@ class DataSet(object):
     to_return = self._images[start:end], self._labels[start:end]
     return to_return
 
-def read_data_sets(path_to_mat, div_fractions):
+def reflect(a):
+  '''Used if, when loading data, you do not want a one-hot encoding (as this was hard-coded first so to keep backwards compatibility)'''
+  return a
+
+def read_data_sets(path_to_mat, div_fractions, label_encoding = dense_to_one_hot):
   class DataSets(object):
     pass
   assert sum(div_fractions) <= 1  # Allow using a fraction of data set
@@ -80,7 +84,7 @@ def read_data_sets(path_to_mat, div_fractions):
   input_all = numpy.rollaxis(input_dict["X"], 3)
 
   # load all target values. change target values to onehot
-  target_all = dense_to_one_hot(input_dict["y"])
+  target_all = label_encoding(input_dict["y"])
 
   train_end_index = int(div_fractions[0]*input_all.shape[0])
   valid_end_index = int((div_fractions[0] + div_fractions[1])*input_all.shape[0])
