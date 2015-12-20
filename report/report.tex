@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage[numbers]{natbib}
 \usepackage{amsmath}
+
 %\documentstyle[nips13submit_09,times,art10]{article} % For LaTeX 2.09
 
 \begin{document}
@@ -75,9 +76,81 @@ J(w) = - \sum_{i}{\sum_{k=0}^{9}{t^{(i)}_k}log(y_k(x^{(i)}))}
 
 where t are the one-hot targets, and y is the the output vector of the final multi-class softmax function. 
 
+Mini-batch training is used to train the neural networks, with 50 input samples per batch. These mini-batches are selected at random with replacement from the sample set. Both the training and extra-training input images from the SVHN website are used, for a total of 604388 training samples. Because of the large quantity of test data available (26032 samples, which is on average 2600 samples per digit), we decided to use 10000 of these for the validation set, and the remaining 16032 for the test set to obtain an unbiased estimate of the performance of our implementation.
+
+Through experimentation, it is found that initializing the weights and biases with a Gaussian distribution of zero mean and standard deviation of 0.05 resulted in the training sequences where the gradient does not explode during early training. 
+
+For each neural network configuration, training is done until the validation error (evaluated every 1000 epochs) becomes roughly constant. The weights are saved every 10000 epochs as checkpoints. The weights from the iteration where the validation error is minimum are used to obtain an evaluation for the final test set evaluation. 
+
 \subsection{Configurations and Results}
 
+The configurations of convolutional neural networks tested are listed in the Table \ref{networkcfgs}. 
 
+\begin{table}[h]
+\centering
+\caption{Network Configurations Explored}
+\label{networkcfgs}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{llllllll}
+\hline
+\multicolumn{1}{|l|}{Layer}                 & \multicolumn{1}{l|}{Config 1}    & \multicolumn{1}{l|}{Config 2}     & \multicolumn{1}{l|}{Config 3}    & \multicolumn{1}{l|}{Config 4}    & \multicolumn{1}{l|}{Config 5}    & \multicolumn{1}{l|}{Config 6}    & \multicolumn{1}{l|}{Config 7}    \\ \hline
+\multicolumn{1}{|l|}{Convolution 1}         & \multicolumn{1}{l|}{5x5, 3, 32}  & \multicolumn{1}{l|}{5x5, 3, 32}   & \multicolumn{1}{l|}{5x5, 3, 32}  & \multicolumn{1}{l|}{5x5, 3, 64}  & \multicolumn{1}{l|}{5x5, 3, 32}  & \multicolumn{1}{l|}{5x5, 3, 32}  & \multicolumn{1}{l|}{5x5, 3, 32}  \\ \hline
+\multicolumn{1}{|l|}{Pooling 1}             & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{yes}         \\ \hline
+\multicolumn{1}{|l|}{Local Response Norm 1} & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          \\ \hline
+                                            &                                  &                                   &                                  &                                  &                                  &                                  &                                  \\ \hline
+\multicolumn{1}{|l|}{Convolution 2}         & \multicolumn{1}{l|}{5x5, 32, 64} & \multicolumn{1}{l|}{5x5, 32, 64}  & \multicolumn{1}{l|}{5x5, 32, 64} & \multicolumn{1}{l|}{5x5, 64, 64} & \multicolumn{1}{l|}{5x5, 32, 64} & \multicolumn{1}{l|}{5x5, 32, 64} & \multicolumn{1}{l|}{5x5, 32, 64} \\ \hline
+\multicolumn{1}{|l|}{Pooling 2}             & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{yes}          & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          \\ \hline
+\multicolumn{1}{|l|}{Local Response Norm 2} & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          \\ \hline
+                                            &                                  &                                   &                                  &                                  &                                  &                                  &                                  \\ \hline
+\multicolumn{1}{|l|}{Convolution 3}         & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{5x5, 64, 64} & \multicolumn{1}{l|}{5x5, 32, 64} & \multicolumn{1}{l|}{5x5, 32, 64} & \multicolumn{1}{l|}{5x5, 32, 64} \\ \hline
+\multicolumn{1}{|l|}{Pooling 3}             & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{yes}         & \multicolumn{1}{l|}{no}          \\ \hline
+\multicolumn{1}{|l|}{Local Response Norm 3} & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          \\ \hline
+                                            &                                  &                                   &                                  &                                  &                                  &                                  &                                  \\ \hline
+\multicolumn{1}{|l|}{Convolution 4}         & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{5x5, 32, 64} \\ \hline
+\multicolumn{1}{|l|}{Pooling 4}             & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{yes}         \\ \hline
+\multicolumn{1}{|l|}{Local Response Norm 4} & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}           & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          & \multicolumn{1}{l|}{no}          \\ \hline
+                                            &                                  &                                   &                                  &                                  &                                  &                                  &                                  \\ \hline
+\multicolumn{1}{|l|}{Fully Connected 1}     & \multicolumn{1}{l|}{4096 x 1024} & \multicolumn{1}{l|}{16384 x 1024} & \multicolumn{1}{l|}{4096 x 1024} & \multicolumn{1}{l|}{4096 x 1024} & \multicolumn{1}{l|}{4096 x 1024} & \multicolumn{1}{l|}{4096x2048}   & \multicolumn{1}{l|}{4096 x 1024} \\ \hline
+                                            &                                  &                                   &                                  &                                  &                                  &                                  &                                  \\ \hline
+\multicolumn{1}{|l|}{Fully Connected 2}     & \multicolumn{1}{l|}{1024 x 10}   & \multicolumn{1}{l|}{1024 x 10}    & \multicolumn{1}{l|}{1024 x 10}   & \multicolumn{1}{l|}{1024 x 10}   & \multicolumn{1}{l|}{1024 x 10}   & \multicolumn{1}{l|}{2048x10}     & \multicolumn{1}{l|}{1024 x 10}   \\ \hline
+\end{tabular}}
+\end{table}
+
+The training progression is shown in Figure \ref{convplot}. Note that the configurations are as labelled in Table \ref{networkcfgs}. It is noteworthy that the training progress tends to level out after about 80000 epochs. Moreover, it is important to note that for several configurations, the training ended abruptly before reaching the end due to some gradients having exceeded pre-set size boundaries. However, this appeared to only occur when the validation error has stopped improving, and hence should not impact the selection of a good set of weights. 
+
+\begin{figure}[h]
+\caption{Training Progress}
+\label{convplot}
+\centering
+\includegraphics[width=1\textwidth]{plots/convplot}
+\end{figure}
+
+The final test set accuracies of the various configurations are shown in the table below. 
+
+\begin{table}[h]
+\centering
+\caption{Test Set Accuracies}
+\label{convtest}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+                  & Config 1 & Config 2 & Config 3 & Config 4 & Config 5 & Config 6 & Config 7 \\ \hline
+Test Set Accuracy & 0.851    & 0.844    & 0.849    & 0.862    & 0.861    & 0.857    & 0.863    \\ \hline
+\end{tabular}}
+\end{table}
+
+
+\subsection{Discussions}
+
+There are numerous observations we can make from the results in Table \ref{convtest}. 
+
+\subsubsection{Pooling}
+
+Configuration 1 and Configuration 2 differ in the presence and absence of a max pooling layer that operates over non-overlapping 2x2 patches, respectively. In Configuration 1, there is one such layer after both the first and the second convolution layers, while in Configuration 2, there is only one such layer after the second convolution layer. 
+
+Configuration 1 obtained 85.1\% accuracy on the test set, while Configuration 2 obtained 84.4\% accuracy. Moreover, the validation set error toward the end of the training also appears to be lower for Configuration 2. We can conclude that the pooling layer has an impact on our results. 
+
+\subsubsection{}
 
 \section{K-Nearest Neighbours}
 K-Nearest Neighbours (K-NN) has traditionally performed very well in a variety of tasks so we will investigate the performance of K-NN in the SVHN domain. Using the raw pixel data ($32 x 32 x 3 = 3072$ dimensions) was too time intensive and so PCA was used to reduce the dimensionality to make the computations more feasible.  The PCA dimension space was determined through cross-validation as well as inspecting the eigenvector weights to determine the significance each eigenvector has for preserving the information contained in the dataset (see Section~\ref{knn_pca} for the direct analysis on top PCA dimensions).  Additionally, the number of neighbours to consider when determining the class for a new example (K hyper-parameter) was also determined using cross validation. \textbf{Finally, the tuned K and the PCA dimension hyper-parameters (PCA=3, K=7 chosen from Figure~\ref{fig:knn}) were trained with the "extra\_train" dataset to realize the optimal performance for K-NN in the SVHN domain given our data sets. The non-parametric classifier produced an accuracy of \%.(this takes too long..still want to do)}
