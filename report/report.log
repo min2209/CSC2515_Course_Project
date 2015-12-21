@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.27)  21 DEC 2015 09:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.27)  21 DEC 2015 10:37
 entering extended mode
 **report.tex
 
@@ -405,11 +405,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--200
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/r
-eport/plots/knn/weighted.png>]
+[6 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/re
+port/plots/knn/weighted.png>]
 <./plots/svm/clustercount.png, id=179, 577.15625pt x 346.29375pt>
 File: ./plots/svm/clustercount.png Graphic file (type png)
 
@@ -484,7 +481,7 @@ Here is how much of TeX's memory you used:
  9879 multiletter control sequences out of 15000+200000
  17062 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,10n,39p,1306b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,10n,39p,1509b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
@@ -497,7 +494,7 @@ X 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on report.pdf (9 pages, 777647 bytes).
+Output written on report.pdf (9 pages, 778061 bytes).
 PDF statistics:
  261 PDF objects out of 1000 (max. 8388607)
  56 named destinations out of 1000 (max. 500000)
