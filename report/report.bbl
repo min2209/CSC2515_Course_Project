@@ -1,9 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[goo()]{googletensorflow}
+Tensorflow.
+\newblock
+  \url{https://www.tensorflow.org/versions/master/tutorials/index.html}.
+\newblock Accessed: 2015-12-15.
 
 \bibitem[Netzer et~al.(2011)Netzer, Wang, Coates, Bissacco, Wu, and Ng]{svhn}
 Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo~Wu, and Andrew~Y
@@ -11,5 +17,22 @@ Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo~Wu, and Andrew~Y
 \newblock Reading digits in natural images with unsupervised feature learning.
 \newblock \emph{NIPS Workshop on Deep Learning and Unsupervised Feature
   Learning}, 2011.
+
+\bibitem[Sermanet et~al.(2012)Sermanet, Chintala, and LeCun]{lecun2012}
+Pierre Sermanet, Soumith Chintala, and Yann LeCun.
+\newblock Convolutional neural networks applied to house numbers digit
+  classification.
+\newblock \emph{Computer Vision and Pattern Recognition}, 2012.
+
+\bibitem[Sherer et~al.(2010)Sherer, Mueller, and Behnke]{pooling}
+Dominik Sherer, Andreas Mueller, and Sven Behnke.
+\newblock Evaluation of pooling operations in convolutional architectures for
+  object recognition.
+\newblock \emph{International Conference on Artificial Neural Networks}, 2010.
+
+\bibitem[van~der Zwaag(2001)]{handwrittendigits}
+Berend-Jan van~der Zwaag.
+\newblock Handwritten digit recognition: A neural network demo.
+\newblock \emph{Computational Intelligence}, 2001.
 
 \end{thebibliography}

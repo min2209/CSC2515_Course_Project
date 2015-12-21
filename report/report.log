@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.27)  14 DEC 2015 16:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.1.27)  21 DEC 2015 09:22
 entering extended mode
 **report.tex
 
@@ -236,54 +236,112 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count106
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip48
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen112
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen113
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count107
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count108
+\leftroot@=\count109
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count110
+\DOTSCASE@=\count111
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count112
+\c@MaxMatrixCols=\count113
+\dotsspace@=\muskip11
+\c@parentequation=\count114
+\dspbrk@lvl=\count115
+\tag@help=\toks16
+\row@=\count116
+\column@=\count117
+\maxfields@=\count118
+\andhelp@=\toks17
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
+\@envbody=\toks18
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
 (C:\Users\mark\Dropbox\School_UofT\CSC2515\Project\CSC2515_Course_Project\repor
 t\report.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 12.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\AtBeginShipoutBox=\box28
+\AtBeginShipoutBox=\box30
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
-\scratchdimen=\dimen112
-\scratchbox=\box29
-\nofMPsegments=\count108
-\nofMParguments=\count109
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count110
-\MPscratchDim=\dimen113
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
-\everyMPtoPDFconversion=\toks16
+\scratchcounter=\count119
+\scratchdimen=\dimen121
+\scratchbox=\box31
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen122
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks21
 )
-Package hyperref Info: Link coloring OFF on input line 10.
+Package hyperref Info: Link coloring OFF on input line 12.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count113
+\c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 10.
-LaTeX Info: Redefining \pageref on input line 10.
-LaTeX Info: Redefining \nameref on input line 10.
+LaTeX Info: Redefining \ref on input line 12.
+LaTeX Info: Redefining \pageref on input line 12.
+LaTeX Info: Redefining \nameref on input line 12.
 
 (C:\Users\mark\Dropbox\School_UofT\CSC2515\Project\CSC2515_Course_Project\repor
 t\report.out)
@@ -291,69 +349,157 @@ t\report.out)
 t\report.out)
 \@outlinefile=\write3
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
-Missing character: There is no × in font ptmr7t!
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 34.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 37.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 37.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
+ [1
 
-Underfull \hbox (badness 2401) in paragraph at lines 40--41
+{C:/Users/mark/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<plots/convplot.png, id=133, 1172.38pt x 718.685pt>
+File: plots/convplot.png Graphic file (type png)
+ <use plots/convplot.png>
+Package pdftex.def Info: plots/convplot.png used on input line 125.
+(pdftex.def)             Requested size: 397.48499pt x 243.65878pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/r
+eport/plots/convplot.png>]
+Underfull \hbox (badness 2401) in paragraph at lines 162--163
 \OT1/ptm/m/n/10 0.02023858, 0.01697088, 0.01630875, 0.01405416, 0.01276369, 0.0
 1054048, 0.00940606,
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 40--41
+Underfull \hbox (badness 2401) in paragraph at lines 162--163
 \OT1/ptm/m/n/10 0.00807162, 0.00638873, 0.00593508, 0.00566315, 0.00521857, 0.0
 0484299, 0.00470581,
  []
 
-[1
+[4] <./plots/knn/majorityvote.png, id=162, 502.9992pt x 414.8298pt>
+File: ./plots/knn/majorityvote.png Graphic file (type png)
 
-{C:/Users/mark/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<./plots/knn/grayscale.png, id=57, 521.7894pt x 414.8298pt>
-File: ./plots/knn/grayscale.png Graphic file (type png)
+<use ./plots/knn/majorityvote.png>
+Package pdftex.def Info: ./plots/knn/majorityvote.png used on input line 173.
+(pdftex.def)             Requested size: 317.9892pt x 262.26196pt.
 
-<use ./plots/knn/grayscale.png>
-Package pdftex.def Info: ./plots/knn/grayscale.png used on input line 51.
-(pdftex.def)             Requested size: 317.9892pt x 252.80527pt.
+<./plots/knn/weighted.png, id=164, 502.9992pt x 414.8298pt>
+File: ./plots/knn/weighted.png Graphic file (type png)
 
+<use ./plots/knn/weighted.png>
+Package pdftex.def Info: ./plots/knn/weighted.png used on input line 180.
+(pdftex.def)             Requested size: 317.9892pt x 262.26196pt.
+ [5 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/r
+eport/plots/knn/majorityvote.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--200
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/r
+eport/plots/knn/weighted.png>]
+<./plots/svm/clustercount.png, id=179, 577.15625pt x 346.29375pt>
+File: ./plots/svm/clustercount.png Graphic file (type png)
+
+<use ./plots/svm/clustercount.png>
+Package pdftex.def Info: ./plots/svm/clustercount.png used on input line 206.
+(pdftex.def)             Requested size: 317.9892pt x 190.80032pt.
+
+<./plots/svm/clusterbinary.png, id=180, 582.175pt x 345.29pt>
+File: ./plots/svm/clusterbinary.png Graphic file (type png)
+
+<use ./plots/svm/clusterbinary.png>
+Package pdftex.def Info: ./plots/svm/clusterbinary.png used on input line 213.
+(pdftex.def)             Requested size: 317.9892pt x 188.60344pt.
+
+
+LaTeX Warning: Reference `manydigits' on page 7 undefined on input line 219.
+
+
+LaTeX Warning: Reference `fig:svmtrim' on page 7 undefined on input line 219.
+
+[7 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/re
+port/plots/svm/clustercount.png> <C:/Users/mark/Dropbox/School_UofT/CSC2515/Pro
+ject/CSC2515_Course_Project/report/plots/svm/clusterbinary.png>]
+<./plots/manydigits.png, id=188, 586.8324pt x 442.2924pt>
+File: ./plots/manydigits.png Graphic file (type png)
+
+<use ./plots/manydigits.png>
+Package pdftex.def Info: ./plots/manydigits.png used on input line 223.
+(pdftex.def)             Requested size: 317.9892pt x 239.67119pt.
+
+<./plots/svm/trim.png, id=189, 580.1675pt x 336.25626pt>
+File: ./plots/svm/trim.png Graphic file (type png)
+
+<use ./plots/svm/trim.png>
+Package pdftex.def Info: ./plots/svm/trim.png used on input line 230.
+(pdftex.def)             Requested size: 317.9892pt x 184.30016pt.
+ [8 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/r
+eport/plots/manydigits.png> <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/
+CSC2515_Course_Project/report/plots/svm/trim.png>]
 (C:\Users\mark\Dropbox\School_UofT\CSC2515\Project\CSC2515_Course_Project\repor
-t\report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
- [2 <C:/Users/mark/Dropbox/School_UofT/CSC2515/Project/CSC2515_Course_Project/r
-eport/plots/knn/grayscale.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
+t\report.bbl
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 11.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 7649) in paragraph at lines 9--13
+[]\OT1/ptm/m/n/9 Tensorflow.  []$\OT1/pcr/m/n/9 https : / / www . tensorflow . 
+org / versions / master / tutorials / index .$
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
 
 (C:\Users\mark\Dropbox\School_UofT\CSC2515\Project\CSC2515_Course_Project\repor
 t\report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 9AAE61641DEA9A03A374FC480232E4F5;611.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
+(rerunfilecheck)             Checksum: 3973639146D3E128A44279071C6C6AED;1775.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
  ) 
 Here is how much of TeX's memory you used:
- 5981 strings out of 493921
- 87246 string characters out of 3144879
- 174478 words of memory out of 3000000
- 9216 multiletter control sequences out of 15000+200000
- 12804 words of font info for 26 fonts, out of 3000000 for 9000
+ 6721 strings out of 493921
+ 96423 string characters out of 3144879
+ 204619 words of memory out of 3000000
+ 9879 multiletter control sequences out of 15000+200000
+ 17062 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,6n,39p,1152b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,10n,39p,1306b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (2 pages, 134411 bytes).
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
+w/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utm
+ri8a.pfb>
+Output written on report.pdf (9 pages, 777647 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 PDF objects out of 1000 (max. 8388607)
+ 56 named destinations out of 1000 (max. 500000)
+ 244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
