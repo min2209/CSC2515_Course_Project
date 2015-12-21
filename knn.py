@@ -29,10 +29,6 @@ def plot_accuracy(x, y, label=''):
     plt.plot(x, y, next(COLOURS), label=label)
 
 
-def normalize(img):
-    cv2.normalize(img, img, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
-    return img
-
 def color_channel_as_feature(x, y):
     '''dataset has two attributes:
           images - 2D multichannel
@@ -73,15 +69,15 @@ def load_extras(sets):
     return extra
 
 Ks = range(1, 62, 6)  # MIN=1 MAX=61
-REDUCED_DIMENSIONS = [1,2]#,3,4,20]   # 1-4 determined by looking at PCA().fracs
+REDUCED_DIMENSIONS = [1,2,3,4,20]   # 1-4 determined by looking at PCA().fracs
 
-# Optimals configs:
-Ks = [7]
-REDUCED_DIMENSIONS = [3]
+# Optimal configs:
+# Ks = [7]
+# REDUCED_DIMENSIONS = [3]
 def main():
     # div_fractions = [0.80, 0.0, 0.20]  # Fractions to divide data into the train, valid, and test sets
-    train = gen_input.read_data_sets(DATA_PATH + "train_32x32.mat", [0.1, 0, 0])
-    test = gen_input.read_data_sets(DATA_PATH + "test_32x32.mat", [0, 0, 0.1])
+    train = gen_input.read_data_sets(DATA_PATH + "train_32x32.mat", [1, 0, 0], False, gen_input.reflect)
+    test = gen_input.read_data_sets(DATA_PATH + "test_32x32.mat", [0, 0, 1], False, gen_input.reflect)
     #extra_train = load_extras(range(1,6))
     Xtr = train.train.images.reshape(-1, IMAGE_DIMENSION, IMAGE_DIMENSION, 3)
     Ytr = train.train.labels
@@ -104,12 +100,13 @@ def main():
     pca_test = PCA(Xte)
     print "eigenvector top weights ", pca_train.fracs[0:20]
 
-    define_plot(x_title="K", y_title="Accuracy",
+    define_plot(x_title="K", y_title="Accuracy (%)",
                 title="Grayscale Test Accuracy vs K for Nearest Neighbors using PCA", label_prefix="K=")
     print "1b"
     plt.xlim((min(Ks) - 1, max(Ks) + 1))
     min_accuracy = 1.0
     max_accuracy = 0
+    all_accuracies = []
     for reduced_dimension in REDUCED_DIMENSIONS:
         print "starting with PCA dim ", reduced_dimension
         Xtr = pca_train.Y[:, 0:reduced_dimension]
@@ -123,7 +120,10 @@ def main():
         pl_x_test = tf.placeholder("float", shape=[num_dimensions])
 
         # Nearest Neighbor calculation using L1 Norm Distance
-        distance = tf.reduce_sum(tf.abs(tf.add(pl_x_train, tf.neg(pl_x_test))), reduction_indices=1)
+        # distance = tf.reduce_sum(tf.abs(tf.add(pl_x_train, tf.neg(pl_x_test))), reduction_indices=1)
+
+        # Nearest Neighbor calculation using L2 Norm Distance, sqrt necessary for Inverse Weight function
+        distance = tf.reduce_sum(tf.sqrt(tf.add(tf.mul(pl_x_train, pl_x_train), tf.mul(pl_x_test, pl_x_test))), reduction_indices=1)
 
         neg_distance = tf.neg(distance)  # MIN(distance) = MAX(neg_distance)
 
@@ -151,17 +151,30 @@ def main():
                 neg_distances = session.run(neg_distance, feed_dict={pl_x_train: Xtr, pl_x_test: Xte[i, :]})
                 top_classes_index = np.argpartition(neg_distances, -K)[-K:]
 
-                top_class_index, count = mode(top_classes_index)
-                top_class_index = top_class_index[0]  # Unbox from array
 
-                if (i % 1000 == 0):
-                    print "Test", (i + 1), "Prediction:", np.argmax(Ytr[top_class_index]), "True Class:", np.argmax(Yte[i])
+
+                ### For Inverse weighting
+                max_weight = 0
+                top_class = 0
+                inverse_weights = 1.0 / -1.0 * neg_distances[top_classes_index]
+                for cls in range(0,10):
+                    ind,count = np.where(Ytr[top_classes_index] == [cls])
+                    cls_total = np.sum(inverse_weights[ind])
+                    if cls_total == max_weight:
+                        top_class = cls
+                ###
+                '''
+                ### For weights = 1, (voting scheme)
+                top_class, count = mode(Ytr[top_classes_index])
+                top_class = top_class[0][0]  # Unbox from matrix
+                ###
+                '''
 
                 # Get nearest neighbor class label and compare it to its true label
-                if np.argmax(Ytr[top_class_index]) == np.argmax(Yte[i]):
+                if top_class == Yte[i][0]:
                     num_correct += 1
 
-            accuracy = float(num_correct) / len(Xte)
+            accuracy = float(num_correct) * 100.0 / len(Xte)
             if accuracy > max_accuracy:
                 max_accuracy = accuracy
             elif accuracy < min_accuracy:
@@ -171,15 +184,16 @@ def main():
             accuracies.append(accuracy)
             used_ks.append(K)
             plot_accuracy(used_ks, accuracies)
+            all_accuracies.append(accuracies)
 
         plot_accuracy(Ks, accuracies, label="PCA " + str(reduced_dimension))
-        print Ks
-        print accuracies
-        plt.ylim((min_accuracy - 0.1 * min_accuracy, max_accuracy + 0.1 * max_accuracy))
-        plt.legend(loc='upper right')
-        plt.ioff()
-        raw_input('Press Enter to exit.')
-        plt.savefig('./plots/knn/grayscale1.png', bbox_inches='tight')
+    print Ks
+    print all_accuracies
+    plt.ylim((min_accuracy - 0.1 * min_accuracy, max_accuracy + 0.1 * max_accuracy))
+    plt.legend(loc=0)
+    plt.ioff()
+    raw_input('Press Enter to exit.')
+    plt.savefig('./plots/knn/grayscale2.png', bbox_inches='tight')
 
 
 if __name__ == '__main__':

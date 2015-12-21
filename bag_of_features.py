@@ -1,21 +1,13 @@
-from scipy.cluster.vq import kmeans2
+from scipy.cluster.vq import kmeans
 import numpy as np
 
 class FeatureBag:
 
-    def __init__(self, num_clusters, max_iterations):
+    def __init__(self, num_clusters):
         self._num_clusters = num_clusters
-        self._max_iterations = max_iterations
-        self._data = np.array([])
 
-    def add_data(self, data):
-        self._data = np.concatenate((self._data, data), axis=0)
-
-    def set_data(self, data):
-        self._data = np.array(data)
-
-    def fit(self):
-        self._centroids, self._data_centroid_labels = kmeans2(self._data, self._num_clusters, self._max_iterations)
+    def fit(self, data):
+        self._centroids, self._data_centroid_labels = kmeans(data, self._num_clusters)
 
     def predict_feature_vectors(self, features):
         '''
@@ -46,6 +38,6 @@ class FeatureBag:
 
         # Can do either counts, or a binary representation
         for cluster in closest_clusters:
-            feature_vector[cluster] = 1
+            feature_vector[0, cluster] += 1
 
         return feature_vector

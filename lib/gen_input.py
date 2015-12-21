@@ -20,7 +20,7 @@ def dense_to_one_hot(labels_dense, num_classes=10):
 
 
 class DataSet(object):
-  def __init__(self, images, labels):
+  def __init__(self, images, labels, normalize=True):
     assert images.shape[0] == labels.shape[0], (
         "images.shape: %s labels.shape: %s" % (images.shape,
                                                labels.shape))
@@ -30,9 +30,10 @@ class DataSet(object):
     assert images.shape[3] == 3
     images = images.reshape(images.shape[0],
                             images.shape[1] * images.shape[2], images.shape[3])
-    # Convert from [0, 255] -> [0.0, 1.0].
-    images = images.astype(numpy.float32)
-    images = numpy.multiply(images, 1.0 / 255.0)
+    if normalize:
+      # Convert from [0, 255] -> [0.0, 1.0].
+      images = images.astype(numpy.float32)
+      images = numpy.multiply(images, 1.0 / 255.0)
     self._images = numpy.array(images)
     self._labels = numpy.array(labels)
     self._epochs_completed = 0
@@ -73,7 +74,7 @@ def reflect(a):
   '''Used if, when loading data, you do not want a one-hot encoding (as this was hard-coded first so to keep backwards compatibility)'''
   return a
 
-def read_data_sets(path_to_mat, div_fractions, label_encoding = dense_to_one_hot):
+def read_data_sets(path_to_mat, div_fractions, normalize = True, label_encoding = dense_to_one_hot):
   class DataSets(object):
     pass
   assert sum(div_fractions) <= 1  # Allow using a fraction of data set
@@ -90,7 +91,9 @@ def read_data_sets(path_to_mat, div_fractions, label_encoding = dense_to_one_hot
   valid_end_index = int((div_fractions[0] + div_fractions[1])*input_all.shape[0])
   test_end_index = int(sum(div_fractions) * input_all.shape[0])
 
-  data_sets.train = DataSet(input_all[0:train_end_index], target_all[0:train_end_index])
-  data_sets.validation = DataSet(input_all[train_end_index:valid_end_index], target_all[train_end_index:valid_end_index])
-  data_sets.test = DataSet(input_all[valid_end_index:test_end_index], target_all[valid_end_index:test_end_index])
+  data_sets.train = DataSet(input_all[0:train_end_index], target_all[0:train_end_index], normalize=normalize)
+  data_sets.validation = DataSet(input_all[train_end_index:valid_end_index], target_all[train_end_index:valid_end_index], normalize=normalize)
+  data_sets.test = DataSet(input_all[valid_end_index:test_end_index], target_all[valid_end_index:test_end_index], normalize=normalize)
   return data_sets
+
+
