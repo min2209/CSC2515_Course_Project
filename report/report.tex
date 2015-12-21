@@ -44,11 +44,11 @@ The basic structure of the network consists of several convolution layers follow
 The standard convolution layer consists of a 2 dimensional patch of size 5x5. The layer takes in M input feature channels, and produces N output feature channels by through parallelism. The convolution operation is described by the following equation. 
 
 \begin{gather}
-{h_{i,j,n}}^l = \sigma(\sum_{e=1}^{M}{\sum_{a=-2}^{2}{\sum_{b=-2}^{2} w_{a,b,m,n}h_{(i+a),(i+b),m}^{l-1}} + b_n}) \\
+h^l_{i,j,n} = \sigma(\sum_{e=1}^{M}{\sum_{a=-2}^{2}{\sum_{b=-2}^{2} w_{a,b,m,n}h_{(i+a),(i+b),m}^{l-1}} + b_n}) \\
 \sigma(x) = \text{max}\{0, x\}
 \end{gather}
 
-where ${h_{i,j,n}}^l$ is the (i,j)-th indexed output in the l-th layer in channel n, while $w_{a,b,m,n}$ is a weight in the convolution layer, and $b_n$ the bias value for the n-th output layer. 
+where $h^l_{i,j,n}$ is the (i,j)-th indexed output in the l-th layer in channel n, while $w_{a,b,m,n}$ is a weight in the convolution layer, and $b_n$ the bias value for the n-th output layer. 
 
 \subsubsection{Local Response Normalization Layer}
 
@@ -148,9 +148,25 @@ There are numerous observations we can make from the results in Table \ref{convt
 
 Configuration 1 and Configuration 2 differ in the presence and absence of a max pooling layer that operates over non-overlapping 2x2 patches, respectively. In Configuration 1, there is one such layer after both the first and the second convolution layers, while in Configuration 2, there is only one such layer after the second convolution layer. 
 
-Configuration 1 obtained 85.1\% accuracy on the test set, while Configuration 2 obtained 84.4\% accuracy. Moreover, the validation set error toward the end of the training also appears to be lower for Configuration 2. We can conclude that the pooling layer has an impact on our results. 
+Configuration 1 obtained 85.1\% accuracy on the test set, while Configuration 2 obtained 84.4\% accuracy. Moreover, the validation set error toward the end of the training also appears to be lower for Configuration 2. Therefore, we can conclude that pooling improves test results in this case. 
 
-\subsubsection{}
+\subsubsection{Local Response Normalization}
+
+Comparing configuration 1 and 3 shows that adding local response normalization after the first and second convolution layers does not improve performance in our case. It is expected that, because the responses of neurons are scaled using those in its neighborhood, the technique encourages all neurons to participate in decision making instead of having neurons with high magnitude responses overwhelm the neurons with low magnitude responses going into the next layer. Through this, the capacity of the network should be improved. Moreover, the reduced disparity between response values can provide a better error gradient to optimize with.
+
+However, in our case, this did not seem to have any impact. It can potentially be because the input images are already normalized, and the optimizer selected is able to handle widely varying gradients in different directions. 
+
+\subsubsection{Adding Convolution Layers}
+
+Configurations 4, 5, 7 experiment with adding an additional convolution layer, for a total of 3 convolution layers as opposed to 2 layers used in Configuration 1. This appears to have a significant impact, improving the test set accuracy by over 1\% for Configurations 4, 5, and 7. It seems that, because the input images are photographs of real world scenes (and hence much more complex than synthetic images such as MNIST), the model's increased capacity is of significant help. 
+
+Configuration 4 and Configuration 5 differ in the number of output channels in the first layer. Configuration 4's first convolution layer extracts 64 channels for its output, while Configuration 5's first convolution layer extracts 32 channels. It is seen that this is makes little difference. It could be due to the fact that the input only has 3 channels. Therefore, many of the 64 channels of output may contain redundant information.
+
+Lastly, it seems that the benefits from adding more layers is of diminishing returns. This is as expected, since endlessly increasing model capacity does not necessarily result in more useful abstractions of the data. 
+
+\subsubsection{Larger Fully Connected Layer}
+
+Configuration 6 experiments with using a larger first fully connected layer, with 2048 output units compared to Configuration 4's 1024 output units. Unfortunately, this does not seem to have any benefits. Similar to adding a fourth convolution layer as in Configuration 7, it appears that the model capacity has exceeded the actual variations and information embedded in the input data. Therefore, increasing the capacity further seems to have little effect.
 
 \section{K-Nearest Neighbours}
 K-Nearest Neighbours (K-NN) has traditionally performed very well in a variety of tasks so we investigated the performance of K-NN in the SVHN domain.
@@ -265,8 +281,6 @@ We expected trimming to produce better results given the obtrusion of extra digi
 
 \section{Conclusion}
 Convolutional neural networks prove their superiority over K-NN and SVM in computer visual tasks. While the best performances for K-NN and SVM reaches 19.8\% and 23.5\% respectively, the covolutional neural network far surpassed these other techniques with an 86\% performance. It is clear that the ability to learn features was crucial as, for example in SVM, the hand crafted features were not robust enough on the dataset, thus producing inaccurate results. Additionally, while K-NN perpetually struggles as the number of dimensions increase, raw pixel intensities were made seemingly meaningless. In addition, the vast intra-class variation made PCA's dependency on variation encoding information unfounded and so it was inaccurately projecting examples to a new dimensional space. Furthermore, convolutional neural networks can down sample these dimensions quickly using its hidden layers and, through back propagation, can automatically learn important features on the raw (colour) data. Though it was not a criteria to produce efficient and fast algorithms, it should be noted that neural networks (as well as SVMs) are fast in predicting (or inferring) future examples as the bulk of their work is done during training and the model could potentially be extracted and loaded as the user pleases. K-NN's ability to make timely predictions depends on the number of examples and their dimensions as all of its computation is done during the prediction stage (memory footprint aside).
-
-\section*{Acknowledgments}
 
 \small{
 \nocite{*}

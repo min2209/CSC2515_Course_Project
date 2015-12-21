@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  21 DEC 2015 17:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  21 DEC 2015 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -371,118 +371,116 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<plots/convplot.png, id=143, 1172.38pt x 718.685pt>
+<plots/convplot.png, id=151, 1172.38pt x 718.685pt>
 File: plots/convplot.png Graphic file (type png)
  <use plots/convplot.png>
 Package pdftex.def Info: plots/convplot.png used on input line 125.
 (pdftex.def)             Requested size: 397.48499pt x 243.65878pt.
 
-[2] [3 <./plots/convplot.png>]
-Underfull \hbox (badness 2401) in paragraph at lines 162--163
+[2] [3 <./plots/convplot.png>] [4]
+Underfull \hbox (badness 2401) in paragraph at lines 178--179
 \OT1/ptm/m/n/10 0.02023858, 0.01697088, 0.01630875, 0.01405416, 0.01276369, 0.0
 1054048, 0.00940606,
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 162--163
+Underfull \hbox (badness 2401) in paragraph at lines 178--179
 \OT1/ptm/m/n/10 0.00807162, 0.00638873, 0.00593508, 0.00566315, 0.00521857, 0.0
 0484299, 0.00470581,
  []
 
-
-Underfull \vbox (badness 1231) has occurred while \output is active []
-
- [4]
-<./plots/knn/majorityvote.png, id=173, 502.9992pt x 414.8298pt>
+<./plots/knn/majorityvote.png, id=179, 502.9992pt x 414.8298pt>
 File: ./plots/knn/majorityvote.png Graphic file (type png)
 
 <use ./plots/knn/majorityvote.png>
-Package pdftex.def Info: ./plots/knn/majorityvote.png used on input line 192.
+Package pdftex.def Info: ./plots/knn/majorityvote.png used on input line 208.
 (pdftex.def)             Requested size: 317.9892pt x 262.26196pt.
 
-<./plots/knn/weighted.png, id=175, 502.9992pt x 414.8298pt>
+<./plots/knn/weighted.png, id=181, 502.9992pt x 414.8298pt>
 File: ./plots/knn/weighted.png Graphic file (type png)
 
 <use ./plots/knn/weighted.png>
-Package pdftex.def Info: ./plots/knn/weighted.png used on input line 199.
+Package pdftex.def Info: ./plots/knn/weighted.png used on input line 215.
 (pdftex.def)             Requested size: 317.9892pt x 262.26196pt.
- [5 <./plots/knn/majorityvote.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 213.
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [5]
+[6 <./plots/knn/majorityvote.png> <./plots/knn/weighted.png>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 229.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 213.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 229.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./plots/knn/weighted.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 218--222
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
 
  []
 
-<./plots/svm/clustercount.png, id=189, 577.15625pt x 346.29375pt>
+<./plots/svm/clustercount.png, id=197, 577.15625pt x 346.29375pt>
 File: ./plots/svm/clustercount.png Graphic file (type png)
 
 <use ./plots/svm/clustercount.png>
-Package pdftex.def Info: ./plots/svm/clustercount.png used on input line 228.
+Package pdftex.def Info: ./plots/svm/clustercount.png used on input line 244.
 (pdftex.def)             Requested size: 357.73405pt x 214.64705pt.
-
-<./plots/svm/clusterbinary.png, id=190, 582.175pt x 345.29pt>
+ [7]
+<./plots/svm/clusterbinary.png, id=206, 582.175pt x 345.29pt>
 File: ./plots/svm/clusterbinary.png Graphic file (type png)
 
 <use ./plots/svm/clusterbinary.png>
-Package pdftex.def Info: ./plots/svm/clusterbinary.png used on input line 235.
+Package pdftex.def Info: ./plots/svm/clusterbinary.png used on input line 251.
 (pdftex.def)             Requested size: 357.73405pt x 212.17557pt.
 
 
-LaTeX Warning: Reference `manydigits' on page 7 undefined on input line 241.
+LaTeX Warning: Reference `manydigits' on page 8 undefined on input line 257.
 
-<./plots/manydigits.png, id=192, 586.8324pt x 442.2924pt>
+[8 <./plots/svm/clustercount.png> <./plots/svm/clusterbinary.png>]
+<./plots/manydigits.png, id=212, 586.8324pt x 442.2924pt>
 File: ./plots/manydigits.png Graphic file (type png)
 
 <use ./plots/manydigits.png>
-Package pdftex.def Info: ./plots/manydigits.png used on input line 245.
+Package pdftex.def Info: ./plots/manydigits.png used on input line 261.
 (pdftex.def)             Requested size: 117.3644pt x 88.45691pt.
- [7 <./plots/svm/clustercount.png>]
-<./plots/svm/trim.png, id=201, 580.1675pt x 336.25626pt>
+
+<./plots/svm/trim.png, id=213, 580.1675pt x 336.25626pt>
 File: ./plots/svm/trim.png Graphic file (type png)
 
 <use ./plots/svm/trim.png>
-Package pdftex.def Info: ./plots/svm/trim.png used on input line 252.
+Package pdftex.def Info: ./plots/svm/trim.png used on input line 268.
 (pdftex.def)             Requested size: 317.9892pt x 184.30016pt.
- [8 <./plots/svm/clusterbinary.png> <./plots/manydigits.png>] [9 <./plots/svm/t
-rim.png>] (./report.bbl
+ [9 <./plots/manydigits.png> <./plots/svm/trim.png>]
+(./report.bbl
 Underfull \hbox (badness 7649) in paragraph at lines 9--13
 []\OT1/ptm/m/n/9 Tensorflow.  []$\OT1/pcr/m/n/9 https : / / www . tensorflow . 
 org / versions / master / tutorials / index .
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
  [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 13F588272371A0A9C02DA8453B8F8462;1851.
+(rerunfilecheck)             Checksum: 4C8CB52A7B8C2698E62D57EABE970962;2052.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 276.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
  ) 
 Here is how much of TeX's memory you used:
- 6859 strings out of 493117
- 97969 string characters out of 6135433
+ 6862 strings out of 493117
+ 98039 string characters out of 6135433
  209427 words of memory out of 5000000
- 10169 multiletter control sequences out of 15000+600000
+ 10171 multiletter control sequences out of 15000+600000
  19710 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,39p,1696b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,10n,39p,1696b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -495,10 +493,10 @@ texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on report.pdf (10 pages, 760251 bytes).
+Output written on report.pdf (10 pages, 761756 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 260 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 276 words of extra memory for PDF output out of 10000 (max. 10000000)
 
