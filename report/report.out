@@ -15,12 +15,14 @@
 \BOOKMARK [2][-]{subsection.3.2}{Determining PCA Dimension}{section.3}% 15
 \BOOKMARK [2][-]{subsection.3.3}{Determining K}{section.3}% 16
 \BOOKMARK [2][-]{subsection.3.4}{Grayscale PCA Pixel Values}{section.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Concluding Remarks}{subsection.3.4}% 18
-\BOOKMARK [1][-]{section.4}{Support Vector Machines \(Bag of Features\)}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{Setup}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.2}{Configs \046 Hand-Crafted Features}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.3}{Results}{section.4}% 22
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Addendum}{subsection.4.3}% 23
-\BOOKMARK [2][-]{subsection.4.4}{Sanity Check}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.5}{Conclusion}{section.4}% 25
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 26
+\BOOKMARK [2][-]{subsection.3.5}{Conclusion}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.6}{Discussion}{section.3}% 19
+\BOOKMARK [1][-]{section.4}{Support Vector Machines \(Bag of Features\)}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Setup}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{Configs \046 Hand-Crafted Features}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{Results}{section.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Addendum}{subsection.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.4}{Sanity Check}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.5}{Conclusion}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.6}{Discussion}{section.4}% 27
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 28
